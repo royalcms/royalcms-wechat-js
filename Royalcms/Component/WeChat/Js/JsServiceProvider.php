@@ -21,7 +21,7 @@ class JsServiceProvider extends ServiceProvider
     {
         $wechat = $this->royalcms['wechat'];
         
-        $wechat->bindShared('js', function($wechat)
+        $wechat->singleton('js', function($wechat)
         {
             $js = new Js($wechat['access_token']);
             $js->setCache($wechat['cache']);
